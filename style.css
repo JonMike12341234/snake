@@ -1,0 +1,160 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Add some padding to the body */
+    background-color: #f0f0f0; /* Light gray background for the page */
+    font-family: Arial, sans-serif;
+    gap: 10px; /* Add gap between flex items */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+/* Grouping some info elements visually by reducing their top margin */
+body > p { /* Target p elements directly under body for game info */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1em; /* Slightly smaller for info text */
+}
+
+#gameCanvas {
+    border: 3px solid #333; /* Dark border for the canvas */
+    background-color: #000000; /* Default canvas background, though JS will draw over it */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Score and Combo styles */
+#score, #comboMultiplier {
+    font-weight: bold;
+    color: #d9534f; /* Reddish color for score */
+    font-size: 1.2em;
+}
+#comboMultiplier {
+    color: #5cb85c; /* Green for combo */
+}
+
+/* Start Message */
+#startMessage {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #007bff; /* Blue color for start message */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling for divs containing sliders */
+div[class*="slider-container"], /* In case a class is added later */
+body > div { /* General styling for divs containing sliders */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+input[type="range"] {
+    margin-left: 5px;
+    flex-grow: 1; /* Allow slider to take available space if container is wider */
+    max-width: 200px; /* Max width for sliders */
+}
+
+/* Button Styling */
+button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#turboButton {
+    background-color: #ffc107; /* Yellow for Turbo */
+    color: #333;
+}
+
+#turboButton:hover {
+    background-color: #e0a800;
+}
+
+#fullscreenButton {
+    background-color: #28a745; /* Green for Fullscreen */
+}
+
+#fullscreenButton:hover {
+    background-color: #1e7e34;
+}
+
+
+/* Canvas Fullscreen Mode */
+#gameCanvas:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border: none; /* Remove border in fullscreen */
+    box-shadow: none; /* Remove shadow in fullscreen */
+    background-color: #000000; /* Ensure background is black */
+    /* object-fit: contain; -- Not using for now, allow direct scaling */
+}
+
+
+/* Footer-like info (Version, Changelog) - specific styling if needed */
+/* For now, they inherit the body > p styling */
+#gameVersion {
+    font-weight: bold;
+}
+
+/* Optional: Placeholder for a more styled game over message */
+/*
+.game-over-message {
+    display: none; // Hidden by default
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.game-over-message h2 {
+    margin-top: 0;
+    color: #d9534f;
+}
+
+.game-over-message button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.game-over-message button:hover {
+    background-color: #4cae4c;
+}
+*/

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <p>Version: <span id="gameVersion">0.1.0</span></p>
+    <p><a href="CHANGELOG.md">Changelog</a></p>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <p id="startMessage">Press an arrow key to start!</p>
+    <p>Score: <span id="score">0</span></p>
+    <p>Combo: <span id="comboMultiplier">1x</span></p>
+    <div>
+        <label for="gameSpeed">Game Speed:</label>
+        <input type="range" id="gameSpeedSlider" min="50" max="200" value="100">
+    </div>
+    <div>
+        <label for="snakeSpeed">Snake Speed:</label>
+        <input type="range" id="snakeSpeedSlider" min="1" max="5" value="1">
+    </div>
+    <button id="turboButton">Turbo</button>
+    <button id="fullscreenButton">Full Screen</button>
+    <script src="script.js"></script>
+</body>
+</html>
