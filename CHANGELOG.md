@@ -5,8 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-<!-- Future changes will go here -->
+## [0.5.0] - 2024-05-24 <!-- Or your current date -->
+### Added 
+<!-- List all the new features from the previous 0.5.0 work -->
+- Player name input on splash screen, defaults to "YourName".
+- "Start Game" button on splash screen and "Play Again" button on game over screen.
+- SlowMo bonus food type (spawns, grants slowmo units, auto-activates).
+- Bad items: Moving Spike, Static Spikes, Wall Obstacle, Shrinking Zone.
+- High score now saves player's name.
+
+### Changed
+- Fullscreen mode now makes the game container (with canvas) truly fullscreen, resizing canvas dynamically.
+- UI elements (stats, controls) become semi-transparent in fullscreen, opaque on hover.
+- Game initiation logic now triggered by button press; snake remains static until first arrow key press.
+- Instructions updated for button start and 'F' key for fullscreen.
+- Combo timer and game speed now correctly interact with SlowMo active state.
+
+### Fixed
+- **Resolved issue where arrow keys would not start the game after player name input was added.**
+- **Corrected a SyntaxError in `applyBonusFoodEffect` function related to if/else structure.**
+- **Ensured snake movement logic correctly handles the first arrow key press after game start via button.**
+- **Addressed potential rapid direction change bug more robustly.**
+
 
 ## [0.3.0] - YYYY-MM-DD <!-- Replace with today's date -->
 ### Added

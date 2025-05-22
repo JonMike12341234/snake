@@ -3,43 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game - Enhanced</title>
+    <title>Snake Game - Advanced</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Snake Game</h1>
+    <div id="gameContainer"> <!-- This container will go fullscreen -->
+        <!-- Splash Screen / Start Message Area -->
+        <div id="splashScreen">
+            <h1>Snake Game</h1>
+            <p class="versionDisplay">Version: <span id="gameVersionSplash">0.5.0</span></p>
+            <div> <!-- Name Input -->
+                <label for="playerNameInput">Enter Your Name:</label>
+                <input type="text" id="playerNameInput" maxlength="15" placeholder="YourName">
+            </div>
+            <button id="startGameButton">Start Game</button> <!-- NEW BUTTON -->
+            <div id="instructions">
+                <p><strong>Instructions:</strong></p>
+                <p>1. Use Arrow Keys to move (after starting).</p>
+                <p>2. Press SHIFT for Turbo boost (uses 1 Turbo Unit).</p>
+                <p>3. Press 'F' to toggle Fullscreen mode.</p>
+            </div>
+            <div id="gameLinks">
+                <a href="CHANGELOG.md" target="_blank">Changelog</a> |
+                <a href="https://github.com/JonMike12341234/snake" target="_blank">View on GitHub</a>
+            </div>
+        </div>
 
-    <!-- Game Status Display -->
-    <p>Score: <span id="score">0</span></p>
-    <p>Combo: <span id="comboMultiplier">1.0x</span></p>
-    <p>Shields: <span id="shieldCount">0</span></p> <!-- NEW -->
-    <p>Turbo Units: <span id="turboUnitsDisplay">0</span></p> <!-- NEW -->
-    <p>Turbo Power: <span id="turboPowerDisplay">2.0x</span></p> <!-- NEW -->
+        <!-- Game Over Message Area -->
+        <div id="gameOverScreen" style="display: none;">
+            <h2>Game Over!</h2>
+            <p><span id="playerNameGameOver">Player</span>'s Score: <span id="finalScore">0</span></p>
+            <button id="restartGameButton">Play Again</button> <!-- NEW RESTART BUTTON -->
+        </div>
 
-    <!-- Game Canvas -->
-    <canvas id="gameCanvas" width="600" height="400"></canvas> <!-- Adjust width/height as needed -->
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas> <!-- Width/Height set by JS -->
 
-    <!-- Messages and Instructions -->
-    <p id="startMessage">Press an arrow key to start!</p>
-    <p id="turboInfo">Press SHIFT for a 3-second speed boost! (Uses 1 Turbo Unit)</p> <!-- NEW -->
-    <p id="bonusMessage" style="min-height: 1.2em;"></p> <!-- NEW (style for min-height prevents layout jump) -->
-
-
-    <!-- Controls -->
-    <div>
-        <label for="gameSpeedSlider">Game Speed (Slower <-> Faster):</label>
-        <input type="range" id="gameSpeedSlider" min="50" max="200" value="100">
-        <!-- Note: Slider logic is inverted in JS: right side = faster -->
+        <!-- In-Game UI Overlay -->
+        <div id="gameUiOverlay">
+            <div id="gameStats">
+                <span>Score: <span id="score">0</span></span>
+                <span>Combo: <span id="comboMultiplier">1.0x</span></span>
+                <span>Shields: <span id="shieldCount">0</span></span>
+                <span>Turbo: <span id="turboUnitsDisplay">0</span> (<span id="turboPowerDisplay">2.0x</span>)</span>
+                <span>SlowMo: <span id="slowMoUnitsDisplay">0</span></span>
+            </div>
+            <div id="highScoreDisplayContainer">
+                High Score: <span id="highScoreName">Player</span> - <span id="highScore">0</span>
+            </div>
+            <div id="comboTimerDisplay" style="display: none;">Combo: <span id="comboTimeLeft">3.0</span>s</div>
+            <p id="bonusMessage"></p>
+        </div>
     </div>
 
-    <button id="fullscreenButton">Toggle Fullscreen</button>
-    <!-- The old turboButton has been removed -->
-
-    <!-- Game Info -->
-    <p>Version: <span id="gameVersion">0.3.0</span></p> <!-- Update version number as appropriate -->
-    <p><a href="CHANGELOG.md" target="_blank">Changelog</a></p>
-    <p><a href="https://github.com/JonMike12341234/snake" target="_blank">View on GitHub</a></p>
-
+    <!-- Sliders (outside gameContainer) -->
+    <div id="controlsBar">
+        <div>
+            <label for="gameSpeedSlider">Speed:</label>
+            <input type="range" id="gameSpeedSlider" min="50" max="200" value="100" title="Game Speed (Slower <-> Faster)">
+        </div>
+    </div>
+    <p class="versionDisplayFooter" style="font-size: 0.8em; text-align: center; margin-top: 10px;">
+        Version: <span id="gameVersionFooter">0.5.0</span>
+    </p>
 
     <script src="script.js"></script>
 </body>
