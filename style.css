@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Light gray background for the page */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#gameCanvas {
+    border: 3px solid #333; /* Dark border for the canvas */
+    background-color: #000000; /* Default canvas background, though JS will draw over it */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
+}
+
+#score {
+    font-weight: bold;
+    color: #d9534f; /* Reddish color for score */
+}
+
+/* Optional: Placeholder for a more styled game over message */
+/*
+.game-over-message {
+    display: none; // Hidden by default
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.game-over-message h2 {
+    margin-top: 0;
+    color: #d9534f;
+}
+
+.game-over-message button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.game-over-message button:hover {
+    background-color: #4cae4c;
+}
+*/
