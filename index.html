@@ -1,27 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Snake Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Enhanced</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Snake Game</h1>
-    <p>Version: <span id="gameVersion">0.1.0</span></p>
-    <p><a href="CHANGELOG.md">Changelog</a></p>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <p id="startMessage">Press an arrow key to start!</p>
+
+    <!-- Game Status Display -->
     <p>Score: <span id="score">0</span></p>
-    <p>Combo: <span id="comboMultiplier">1x</span></p>
+    <p>Combo: <span id="comboMultiplier">1.0x</span></p>
+    <p>Shields: <span id="shieldCount">0</span></p> <!-- NEW -->
+    <p>Turbo Units: <span id="turboUnitsDisplay">0</span></p> <!-- NEW -->
+    <p>Turbo Power: <span id="turboPowerDisplay">2.0x</span></p> <!-- NEW -->
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas" width="600" height="400"></canvas> <!-- Adjust width/height as needed -->
+
+    <!-- Messages and Instructions -->
+    <p id="startMessage">Press an arrow key to start!</p>
+    <p id="turboInfo">Press SHIFT for a 3-second speed boost! (Uses 1 Turbo Unit)</p> <!-- NEW -->
+    <p id="bonusMessage" style="min-height: 1.2em;"></p> <!-- NEW (style for min-height prevents layout jump) -->
+
+
+    <!-- Controls -->
     <div>
-        <label for="gameSpeed">Game Speed:</label>
+        <label for="gameSpeedSlider">Game Speed (Slower <-> Faster):</label>
         <input type="range" id="gameSpeedSlider" min="50" max="200" value="100">
+        <!-- Note: Slider logic is inverted in JS: right side = faster -->
     </div>
-    <div>
-        <label for="snakeSpeed">Snake Speed:</label>
-        <input type="range" id="snakeSpeedSlider" min="1" max="5" value="1">
-    </div>
-    <button id="turboButton">Turbo</button>
-    <button id="fullscreenButton">Full Screen</button>
+
+    <button id="fullscreenButton">Toggle Fullscreen</button>
+    <!-- The old turboButton has been removed -->
+
+    <!-- Game Info -->
+    <p>Version: <span id="gameVersion">0.3.0</span></p> <!-- Update version number as appropriate -->
+    <p><a href="CHANGELOG.md" target="_blank">Changelog</a></p>
+    <p><a href="https://github.com/JonMike12341234/snake" target="_blank">View on GitHub</a></p>
+
+
     <script src="script.js"></script>
 </body>
 </html>
