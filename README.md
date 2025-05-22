@@ -3,6 +3,10 @@
 ## Description
 A classic Snake game implemented using HTML, CSS, and plain JavaScript. This project serves as a basic implementation of the popular arcade game.
 
+## Play the Game
+You can play the Snake game by opening the `index.html` file in your web browser.
+[Play Snake Game](index.html)
+
 ## How to Play
 
 **Controls:**

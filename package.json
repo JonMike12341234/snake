@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "## Description A classic Snake game implemented using HTML, CSS, and plain JavaScript. This project serves as a basic implementation of the popular arcade game.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonMike12341234/snake.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonMike12341234/snake/issues"
+  },
+  "homepage": "https://github.com/JonMike12341234/snake#readme",
+  "dependencies": {
+    "puppeteer": "^24.9.0"
+  }
+}
